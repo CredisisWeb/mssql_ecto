@@ -62,7 +62,7 @@ defmodule MssqlEcto.Connection do
 
   @impl true
   def query(conn, sql, params, opts) do
-    Mssqlex.query(conn, sql, params, opts)
+    Mssqlex.query(conn, sanitise_query(sql), params, opts)
   end
 
   @doc """
